@@ -22,7 +22,7 @@ handler.on('push', function (event) {
       maxBuffer: 1024 * 1024 // Increase max buffer to 1mb
   };
 
-  var child = execFile('deploy.sh', execOptions, function(error, stdout, stderr) {
+  var child = execFile('deploy-' + event.payload.repository.name + '.sh', execOptions, function(error, stdout, stderr) {
       if ( error ) {
           console.log(error)
       }
